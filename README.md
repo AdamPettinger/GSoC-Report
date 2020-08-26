@@ -56,15 +56,16 @@ The following describe the objectives accepted in the proposal for the project
 
 ### Other Videos
 Damped Least Squares work
+
 ![Alt Text](Videos/dls_demo_gif.gif)
 
+[MoveIt Servo feature overview](https://www.youtube.com/watch?v=MF-_XKpGefY)
 
 # Ongoing Work and To-Do's
 ### Ongoing Work
 Items currently in progress include:
 
 1. **Objective: Allow and implement different IK methods.** I am currently experimenting with using Damped Least Squares as the IK method when the normal Singular-Value-Decomposition-based Inverse Jacobian method breaks down due to singularity in the Jacobian matrix. The idea is to allow the manipulator to move while very close to a kinematic singularity, at the expense of deviating slightly from the exact user input. Once working, this will likely be implemented on the ROS1 side, and may be added as a user option, or the whole IK method may be allowed to be a plugin and Damped Least Squares would be one available plugin
-2. **Unrelated**: The `moveit_servo` demonstrations currently spawn multiple nodes of the same name. See [this Issue](https://github.com/ros-planning/moveit2/issues/252) for details. A hopefully simple change should be able to solve.
 
 ### To-Do's
 Current To-Do's include:
@@ -86,5 +87,7 @@ The below table lists everything I have generated as part of this project
 | [ROS1 PR for pre-port improvements](https://github.com/ros-planning/moveit/pull/2151) | Contains some fixes and improves to `moveit_jog_arm` before the renaming and porting |
 | [PR to move and rename to Servo](https://github.com/ros-planning/moveit/pull/2165) | Changed `moveit_experimental/moveit_jog_arm` to `moveit_ros/moveit_servo` |
 | [PR for ROS1 changes found from ROS2 work](https://github.com/ros-planning/moveit/pull/2249) | Backports some changes/fixes found from doing the ROS2 port/improvement |
+| [PR fixing duplicate nodes in demos](https://github.com/ros-planning/moveit2/pull/262) | Fixes the issue below |
+| [Issue for duplicate nodes](https://github.com/ros-planning/moveit2/issues/252) | Found bug affecting `moveit_servo` with duplicate nodes in demos |
 | [Google Doc for Proposal](https://docs.google.com/document/d/1lFwhO4C6Rdo6YalJqUsw4Lmw-wcUA1jTHbI8vwB1KYE/edit?usp=sharing) | My GSoC Proposal |
 | [ROS Discourse proposal](https://discourse.ros.org/t/gsoc-2020-porting-jog-arm-to-ros2-with-improvements/13388) | My initial proposal on ROS Discourse |
